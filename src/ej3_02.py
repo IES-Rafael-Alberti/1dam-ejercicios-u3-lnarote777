@@ -1,0 +1,27 @@
+""" 
+Ejercicio 3.1.2
+Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matemáticas, Física, Química, Historia y Lengua)
+en una lista y la muestre por pantalla el mensaje Yo estudio <asignatura>, donde <asignatura> sobre cada una de las asignaturas de la lista.
+"""
+def listaAsignaturas(asignaturas): 
+    for i in asignaturas:
+        print("Yo estudio" , i)
+        
+def pedirAsignatura():
+    
+    numAsign = int(input("Introduzca el numero de asignaturas: "))
+    for i in range(numAsign):
+        lista = input("Introduce las asignatuas: ")
+        asignatura.append(lista)
+    return asignatura
+
+def main():
+    asignatura = []
+    pedirAsignatura(asign)
+    listaAsignaturas(asignatura)
+    
+
+
+
+if __name__ == "__main__":
+    main()
