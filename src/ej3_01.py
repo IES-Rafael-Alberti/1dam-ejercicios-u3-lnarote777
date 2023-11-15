@@ -3,7 +3,17 @@ Ejercicio 3.1.1
 Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matemáticas, Física, Química, Historia y Lengua) 
 en una lista y la muestre por pantalla.
 """
+from borrarTerminal import borrarTerminal
 
+
+def pedirNumAsignaturas():
+    return int(input("Número de asignaturas:"))
+
+
+def pedirAsignaturas():
+    numAsignatura = pedirNumAsignaturas()
+    return tuple(input("Introduzca la asignatura: ") for i in range(numAsignatura))
+    
 
 def listaAsignaturas(asignaturas):  
     for asignatura in asignaturas:
@@ -11,7 +21,9 @@ def listaAsignaturas(asignaturas):
 
 
 def main():
-    asignaturas =["Matemáticas","Física", "Química", "Historia", "Lengua"]
+    borrarTerminal()
+    
+    asignaturas = pedirAsignaturas()
     listaAsignaturas(asignaturas)
 
 
