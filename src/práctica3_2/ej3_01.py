@@ -5,6 +5,8 @@ Escribir un programa que guarde en una variable el diccionario {'Euro':'€', 'D
 
 
 def preguntar_divisa():
+    """Pregunta la divisa que se desea conocer y devuelve el valor de la divisa introducida.
+    """
     divisa = {'Euro':'€', 'Dollar':'$', 'Yen':'¥'}
     pregunta = input("¿Que divisa desea conocer? (Euro, Dollar o Yen): ")
     pregunta = pregunta.title()
