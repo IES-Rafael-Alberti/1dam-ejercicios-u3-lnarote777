@@ -9,16 +9,20 @@ Escribir un programa que guarde en un diccionario los precios de las frutas de l
     Naranja	  0.70
     
 """
+
+
 def fruta_y_kilos():
     frutas_precios = {'Plátano': 1.35 , 'Manzana': 0.80 , 'Pera': 0.85 , 'Naranja': 0.70}
     fruta = input('¿Que fruta quiere? ')
     fruta = fruta.title()
-    kilos = float(input('¿Cuántos kilos? '))
-    
     if fruta in frutas_precios:
+        kilos = float(input('¿Cuántos kilos? '))
         print(f'{fruta}: {frutas_precios.get(fruta) * kilos} €')
     else: 
         print('La fruta no se encuentra disponible.')
+    
+    
+   
 
 
 def main():

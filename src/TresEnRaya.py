@@ -110,6 +110,7 @@ def jugar(tablero: tuple):
     turno = 0
     ronda = 0
     hay_ganador = False
+    
     while not hay_ganador:
         turno = cambiar_turno(turno)
         if turno == 1:
@@ -118,7 +119,7 @@ def jugar(tablero: tuple):
         print(f"\nRONDA {ronda}")
         print(f"-" * len(f"\nRONDA {ronda}") + "\n")
         
-        colocar_ficha(tablero)
+        colocar_ficha(tablero, jugador)
         mostrar_tablero(tablero)
          #verificar_ganador(tablero) 
 
