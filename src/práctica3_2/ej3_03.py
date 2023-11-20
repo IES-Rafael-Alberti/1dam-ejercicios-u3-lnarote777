@@ -10,8 +10,6 @@ Escribir un programa que guarde en un diccionario los precios de las frutas de l
     
 """
 def fruta_y_kilos():
-    """Pide la fruta y los kilos al usuario y comprueba que esté en el diccionario.
-    """
     frutas_precios = {'Plátano': 1.35 , 'Manzana': 0.80 , 'Pera': 0.85 , 'Naranja': 0.70}
     fruta = input('¿Que fruta quiere? ')
     fruta = fruta.title()

@@ -23,7 +23,7 @@ def datos():
     if edad < 0 :
         raise ValueError
     
-    mensaje = f'\n{usuario['nombre']} tiene {usuario['edad']}, vive en {usuario['dirección']} y su número de teléfono es {usuario['teléfono']}. '
+    mensaje = f'\n{usuario["nombre"]} tiene {usuario["edad"]}, vive en {usuario["dirección"]} y su número de teléfono es {usuario["teléfono"]}. '
     return mensaje
 
 

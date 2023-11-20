@@ -4,11 +4,12 @@ Escribir un programa que almacene en una lista los siguientes precios: 50, 75, 4
 y el mayor de los precios.
 """
 
-
-
 def ordenarPrecios(precio):
     precio.sort()
-    return precio
+    print('Precios: ', precio)
+    menor = precio[0]
+    mayor = precio[6]
+    return f'Precio menor: {menor}. \nPrecio mayor: {mayor}.'
     
 def main():
     precio = [50, 75, 46, 22, 80, 65, 8]
