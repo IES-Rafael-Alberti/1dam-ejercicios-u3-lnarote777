@@ -103,6 +103,9 @@ def colocar_ficha(tablero: tuple , jugador: int):
             mostrar_tablero(tablero)
         
 
+def verificarGanador():
+    3
+
 
 def jugar(tablero: tuple):
     
@@ -119,12 +122,12 @@ def jugar(tablero: tuple):
         print(f"\nRONDA {ronda}")
         print(f"-" * len(f"\nRONDA {ronda}") + "\n")
         
-        colocar_ficha(tablero, jugador)
+        colocar_ficha(tablero, turno)
         mostrar_tablero(tablero)
-         #verificar_ganador(tablero) 
+         
 
         if ronda <= 3:
-           ganador, hay_ganador = 3
+           ganador, hay_ganador = verificarGanador(tablero)
         if hay_ganador :
             print(f"\nEl jugador {ganador} ha ganado \n")
             
