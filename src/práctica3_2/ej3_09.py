@@ -4,3 +4,9 @@ Escribir un programa que gestione las facturas pendientes de cobro de una empres
 """
 
 
+def main():
+    
+
+
+if __name__ == '__main__':
+    main()

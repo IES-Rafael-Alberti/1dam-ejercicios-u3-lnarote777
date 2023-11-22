@@ -51,9 +51,9 @@ def conjunto_potencia(conjunto_original : set) -> list:
 def main():
     conjunto_original = {6, 1, 4}
     # TODO: Realiza la llamada a la función conjunto_potencia:
-    tu_vera = conjunto_potencia(conjunto_original)
+    result = conjunto_potencia(conjunto_original)
     # TODO: Muestra la lista resultante del conjunto potencia en consola:
-    print(tu_vera)
+    print(result)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,0 @@
-def domicilios_clientes(lista_compras):
-    domicilios = set()
-    for compra in lista_compras:
-        domicilios.add(compra[3])
-    return domicilios

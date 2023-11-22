@@ -5,10 +5,18 @@ Escribir un programa que cree un diccionario vacío y lo vaya llenado con inform
 # con cualquier dato que se quiera introducir 
     
 def crearDiccionario(info: dict):
-    actualizacion = True
+    True
     
-    while actualizacion == True:
-        clave = input('')
+    while True:
+        clave = input('Introduzca el dato que quiera introducir: ')
+        valor = input(f'Introduzca su {clave}: ')
+        info.setdefault(clave, valor)
+        print(info)
+        continuar = input('¿Desea continuar? (s/n): ')
+        if continuar == 'n':
+            break
+            
+        
 
 def main():
     info = {}
