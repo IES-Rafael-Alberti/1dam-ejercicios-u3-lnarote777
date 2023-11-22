@@ -21,7 +21,7 @@ def finalizar():
 def primariaIncluidosSecundaria(conjunto_primaria, conjunto_secundaria):
     incluidos = conjunto_primaria <= conjunto_secundaria    
     
-    print(f'¿Los nombres de primaria estan incluidos en secundaria? {incluidos}')
+    print(f'\n¿Los nombres de primaria estan incluidos en secundaria? {incluidos}')
 
 
 def alumnosNoRepetidos(conjunto_primaria, conjunto_secundaria):
