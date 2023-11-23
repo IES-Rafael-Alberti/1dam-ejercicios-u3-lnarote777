@@ -9,11 +9,14 @@ Crea un conjunto multiplos_de_tres que contenga los números que son múltiplos 
 Encuentra la intersección entre los conjuntos pares y multiplos_de_tres y guárdala en un conjunto llamado pares_y_multiplos_de_tres.
 """
 
+def crear_conjuntosPares(numeros):
+    conjuntoPares = set()
+    
 
 
 def main():
-    
-
+    numeros = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+    crear_conjuntosPares(numeros)
 
 if __name__ == '__main__':
     main()
