@@ -37,10 +37,10 @@ PALOS = ('Corazones', 'Picas', 'Treboles', 'Diamantes')
 
 CARTAS = ('As', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K')
 
-VALORES = ???
+VALORES = {'As':(1,11),'2':2, '3':3, '4': 4, '5':5, '6':6, '7':7, '8':8, '9':9, '10':10, 'J':10, 'Q':10, 'K':10}
 
 PUNTOS_OBJETIVO = 21
-CARTAS_AL_INICIO = 21
+CARTAS_AL_INICIO = 1
 
 
 def borrar_consola():
@@ -61,17 +61,21 @@ def pulse_tecla_para_continuar():
 def crear_baraja() -> set:
     """ Crear la baraja de 52 cartas
     """
-    return set((carta, palo) for carta in CARTAS, PALOS)
+    return set((carta, palo) for carta in CARTAS for palo in PALOS)
 
 
 def reparte_carta(baraja: set) -> tuple:
     """ Reparte una carta de la baraja
     """
-    return baraja.pop()
-    
+    try:
+        return baraja.pop()
+    except Exception:
+        print('***ERROR*** no hay cartas en la baraja.')
+        return None
+
 
 def dame_carta(baraja: set, cartas_jugador: list) -> bool:
-    """ Pide una carta, la guarda en la lista del jugador y retorna True si la baraja se ha quedado sin cartas
+    """ Pide una carta, la guarda en la lista del jugador y retorna false si la baraja se ha quedado sin cartas
     """
     carta = reparte_carta(baraja)
     if carta == None:
@@ -91,19 +95,19 @@ def contesta_a_pregunta(mensaje: str) -> bool:
             print("*Error* respuesta no válida (s, si, n, no)")
         respuesta = input(mensaje).strip().lower()
 
-    return respuesta in ???
+    return respuesta in {'s', 'si'}
 
 
-def pedir_carta(baraja: set, cartas_jugador: list) -> bool:
+def pedir_carta(baraja: set, cartas_jugador: list) -> bool:       
     """ Pregunta si quiere una carta o se planta
     """
     if contesta_a_pregunta("¿Quieres una carta? (s/n) "):
-        return dame_carta()
+        return dame_carta(baraja, cartas_jugador)
     else:
         return False
 
 
-def actualizar_puntos_comodines(cartas_jugador: list) -> int:
+def actualizar_puntos_comodines(cartas_jugador: list, puntos: int) -> int:
     """ Actualizar los puntos con las cartas que tengan más de un valor
     """
     for carta in cartas_jugador:       
@@ -119,7 +123,7 @@ def calcular_puntos(cartas_jugador: list) -> int:
     for carta in cartas_jugador:
         puntos += valor_carta(carta[0])
 
-    puntos = actualizar_puntos_comodines(cartas_jugador)
+    puntos = actualizar_puntos_comodines(cartas_jugador, puntos)
 
     return puntos > PUNTOS_OBJETIVO, puntos
 
@@ -127,11 +131,11 @@ def calcular_puntos(cartas_jugador: list) -> int:
 def valor_carta(carta: tuple, valor_minimo = True) -> int:
     """ Retornar el valor de una carta, si tiene más de uno retornará el valor mínimo o máximo dependiendo de valor_minimo
     """
-    if VALORES[carta] == tuple and VALORES[carta] == 2:
+    if type(VALORES[carta]) == tuple and len(VALORES[carta]) == 2:
         if valor_minimo:
-            return ???
+            return int(min(VALORES[carta]))
         else:
-            return ???
+            return int(max(VALORES[carta]))   
     else:
         return int(VALORES[carta])
    
@@ -140,8 +144,8 @@ def mostrar_cartas(jugador, puntos, cartas_jugador: list):
     """ Mostrar los puntos y cartas de un jugador
     """
     print(jugador)
-    print("-" * len(puntos))
-    print(f"\t{puntos} puntos >>\n" + "\n".(f"\t{carta[0]} de {carta[1]}" for )) 
+    print("-" * len(jugador))
+    print(f"\t{puntos} puntos >>\n" + "\n".join(f"\t{carta[0]} de {carta[1]}" for carta in cartas_jugador))
 
 
 def mostrar_resultado(cartas_jugador1, puntosJ1, cartas_jugador2, puntosJ2):
@@ -170,12 +174,12 @@ def mostrar_resultado(cartas_jugador1, puntosJ1, cartas_jugador2, puntosJ2):
     borrar_consola()
 
 
-def jugar():
+def jugar(baraja:set ):
     """ Jugar al black jack entre dos jugadores
     """
     ronda = 1
-    cartas_jugador1 = 0
-    cartas_jugador2 = 0
+    cartas_jugador1 = []
+    cartas_jugador2 = []
     puntosJ1 = puntosJ2 = 0
 
     for _ in range(CARTAS_AL_INICIO):
@@ -211,7 +215,7 @@ def main():
     seguir_jugando = True
 
     while seguir_jugando:
-        jugar()
+        jugar(baraja)
         seguir_jugando = not contesta_a_pregunta("¿Quieres jugar otra partida? (s/n) ")
 
 
