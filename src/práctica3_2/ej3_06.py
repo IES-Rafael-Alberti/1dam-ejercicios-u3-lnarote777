@@ -13,7 +13,7 @@ def crearDiccionario(info: dict):
         info.setdefault(clave, valor)
         print(info)
         continuar = input('¿Desea continuar? (s/n): ')
-        if continuar == 'n':
+        if continuar.lower() == 'n':
             break
             
         

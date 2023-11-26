@@ -11,7 +11,12 @@ Crea un conjunto letras_comunes que contenga las letras que están tanto en el c
 
 
 def main():
-    
+    vocales = {'a', 'e', 'i', 'o', 'u'}
+    consonantes = {'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'ñ', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'}
+    letras_comunes = vocales|consonantes
+    print(f'Vocales: {sorted(vocales)}')
+    print(f'Consonantes: {sorted(consonantes)}')
+    print(f'Abecedario: {sorted(letras_comunes)}' )
 
 
 if __name__ == '__main__':
