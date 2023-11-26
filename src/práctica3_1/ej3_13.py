@@ -5,9 +5,11 @@ Escribir un programa que pregunte por una muestra de números, separados por com
 
 def convertir_a_entero(num):
     n = len(num)
+    
     for i in range(n):
         num[i] = int(num[i])
     lista = tuple(num)
+    
     return lista
 
 
@@ -21,11 +23,13 @@ def pedir_numeros():
 def media_y_deviacion_numeros(enteros):
     suma = 0
     suma_desviacion = 0
+    
     for i in enteros :
         suma += i
         suma_desviacion += i**2
     media = suma/len(enteros)
     desviacion = (suma_desviacion/len(enteros)-media**2)**(1/2)
+    
     return f'La media es {media} y la desviación típica es {desviacion}'
 
 def main():

@@ -4,11 +4,12 @@ Escribir un programa que cree un diccionario de traducción español-inglés. El
 """
 
 def crear_dicionario():
+    
     diccionario = {}
 
     palabras = input('Introduzca las palabra en español y su traducción al inglés con el formato <palabra>:<traducción> y separadas por comas: ')
-
     palabras= palabras.split(', ')
+    
     for traduccion in palabras:
         espanol, ingles = traduccion.split(':')
         diccionario.setdefault(espanol, ingles)
@@ -17,6 +18,7 @@ def crear_dicionario():
     
     
 def introducir_frase():
+    
     return input('\nIntroduzca la frase que desee traducir: ')
 
 
@@ -34,6 +36,7 @@ def main():
      
     esp_ing = crear_dicionario()
     frase = introducir_frase()
+    
     traductor(esp_ing, frase)  
 
 

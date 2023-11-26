@@ -10,6 +10,7 @@ def fecha_larga():
 
     print(f'{fecha[0]} de {meses[int(fecha[1])]} de {fecha[2]}') 
 
+
 def main():
     fecha_larga()
 

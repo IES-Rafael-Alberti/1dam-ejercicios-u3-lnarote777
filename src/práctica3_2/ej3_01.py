@@ -8,6 +8,7 @@ def preguntar_divisa():
     divisa = {'Euro':'€', 'Dollar':'$', 'Yen':'¥'}
     pregunta = input("¿Que divisa desea conocer? (Euro, Dollar o Yen): ")
     pregunta = pregunta.title()
+    
     if pregunta in divisa :
         print(divisa.get(pregunta))
     else:

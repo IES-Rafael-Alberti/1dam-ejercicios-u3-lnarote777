@@ -5,7 +5,6 @@ Escribir un programa que cree un diccionario vacío y lo vaya llenado con inform
 # con cualquier dato que se quiera introducir 
     
 def crearDiccionario(info: dict):
-    True
     
     while True:
         clave = input('Introduzca el dato que quiera introducir: ')

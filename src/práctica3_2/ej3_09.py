@@ -21,7 +21,6 @@ def menu():
         print('2. Pagar una factura existente.')
         print('3. Terminar.')
         
-
         opcion = input('Elija una opción: ')
         
         if opcion == '1':
@@ -56,6 +55,7 @@ def pagar_factura(facturas: dict):
         for numFact , cobro in facturas.items():
             print(numFact, '\t\t\t', cobro,'€')
         print('')
+        
         pagar = input('Introduzca el número de la factura que desee pagar: ')
         facturas.pop(pagar)    
         print('\nFactura pagada con éxito!\n')

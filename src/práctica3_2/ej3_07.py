@@ -37,9 +37,11 @@ def pedir_articulos():
             cont += 1            
             lista_compra.setdefault(articulo, precio)             
         elif respuesta == 'n':
-            lista_compra.setdefault(articulo, precio)             
+            lista_compra.setdefault(articulo, precio)  
+                       
             print('\nLISTA DE LA COMPRA')
             print('-' * 18)
+            
             for articulos , precios in lista_compra.items():
                 print(articulos,'    ', precios,'€')
             break

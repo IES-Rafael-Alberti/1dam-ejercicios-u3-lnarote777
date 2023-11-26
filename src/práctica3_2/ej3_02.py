@@ -4,14 +4,7 @@ Escribir un programa que pregunte al usuario su nombre, edad, dirección y telé
 """
  
 def datos():
-    """Datos del usuario.
 
-    Raises:
-        ValueError: salta cuando la edad es negativa
-
-    Returns:
-        str: cadena de caracteres
-    """
     nombre = input("Indique su nombre: " )
     nombre = nombre.title()
     edad =int(input("Indique su edad: "))

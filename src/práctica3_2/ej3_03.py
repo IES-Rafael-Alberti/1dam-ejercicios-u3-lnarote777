@@ -15,6 +15,7 @@ def fruta_y_kilos():
     frutas_precios = {'Plátano': 1.35 , 'Manzana': 0.80 , 'Pera': 0.85 , 'Naranja': 0.70}
     fruta = input('¿Que fruta quiere? ')
     fruta = fruta.title()
+    
     if fruta in frutas_precios:
         kilos = float(input('¿Cuántos kilos? '))
         print(f'{fruta}: {frutas_precios.get(fruta) * kilos} €')

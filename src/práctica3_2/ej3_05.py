@@ -6,6 +6,7 @@ Escribir un programa que almacene el diccionario con los créditos de las asigna
 def creditos(asignaturas: dict):
     
     total = 0
+    
     for asignatura, creditos in asignaturas.items():
         print(f'{asignatura} tiene {creditos} créditos.' )
         total += creditos
