@@ -20,7 +20,7 @@ def mostrar_menu():
     print("6. Terminar")
 
 
-def agregar_cliente(base_datos):
+def agregar_cliente(base_datos: dict):
     nif = input("Ingrese el NIF del cliente: ")
     nombre = input("Ingrese el nombre del cliente: ")
     direccion = input("Ingrese la dirección del cliente: ")
@@ -29,31 +29,41 @@ def agregar_cliente(base_datos):
     preferente = input("¿Es cliente preferente? (Sí/No): ").lower() == 'sí'
 
     #TODO: Crear un diccionario cliente con toda la información...
-    ???
-
+    base_datos_clientes = {}
+    base_datos_clientes.setdefault('Nombre', nombre)
+    base_datos_clientes.setdefault('Direccion', direccion)
+    base_datos_clientes.setdefault('Telefono', telefono)
+    base_datos_clientes.setdefault('Correo', correo)
+    base_datos_clientes.setdefault('Preferente', preferente)
+    
     #TODO: Añadir el diccionario cliente que previamente has creado al 
     # diccionario principal que hemos llamado base_datos...
-    ???
+    base_datos[nif] = base_datos_clientes
 
     print(f"Cliente {nombre} añadido correctamente.")
 
 
-def eliminar_cliente(base_datos):
+def eliminar_cliente(base_datos: dict):
     nif = input("Ingrese el NIF del cliente que desea eliminar: ")
     #TODO: eliminar el cliente con nif que se ha introducido
     #Si existe mostrar por consola "Cliente con NIF XXXXXXXXX eliminado correctamente."
     #Sino mostrar "No se encontró un cliente con NIF XXXXXXXXX en la base de datos."
-    ???
+    if nif in base_datos:
+        base_datos.pop(nif)
+        print(f"Cliente con NIF {nif} eliminado correctamente.")
+    else:
+        print(f"No se encontró un cliente con NIF {nif} en la base de datos.")
 
 
-def mostrar_cliente(base_datos):
+def mostrar_cliente(base_datos: dict):
     nif = input("Ingrese el NIF del cliente que desea mostrar: ")
     cliente = base_datos.get(nif)
     if cliente:
         print("\nDatos del cliente:")
         #TODO: Mostrar todos los datos del cliente
         #en cada línea de consola mostrar el par clave: valor de sus datos...
-        ???
+        for nif, cliente in base_datos.items():
+            print(nif, cliente)
     else:
         print(f"No se encontró un cliente con NIF {nif} en la base de datos.")
 
